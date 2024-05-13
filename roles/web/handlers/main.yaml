@@ -1,0 +1,14 @@
+
+- name: hand
+  copy:
+    src: "{{item}}"
+    dest: /var/www/html/
+  notify: hand2
+  changed_when: true
+  loop:
+    "{{ mar }}"
+
+- name: hand2
+  sysvinit:
+    name: "{{x}}"
+    state: restarted

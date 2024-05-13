@@ -1,0 +1,10 @@
+
+
+my_message: hello marioud
+x: nginx
+mar: 
+      - /home/yahya/projects/ansible/day2/file.css,
+      - /home/yahya/projects/ansible/day2/file.js 
+       # - /home/yahya/projects/ansible/day2/index.html
+package: nginx 
+version: latest

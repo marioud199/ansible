@@ -1,0 +1,110 @@
+- name: your play name
+  hosts: web_servers
+  
+  roles:
+
+    - web
+    
+     
+
+
+
+
+  
+
+    # mar:
+    # - {package_name: "nginx" , package_state: "present"}
+    # - {package_name: "mariadb-server" , package_state: "present"}
+    # - {package_name: "curl" , package_state: "absent"}
+
+    # vars_files:
+    #   - ./var.yaml
+      
+    # tasks:
+    #   - name: template file
+
+    #     template:
+    #       src: ./index.html.j2 
+    #       dest: /var/www/html/index.html
+      
+
+
+
+
+  # - name: update_cache
+  #   tags: update
+  #   apt: 
+  #     update_cache: true
+  # - name: Install Nginx
+  #   tags: Install
+  #   apt:
+  #     name: "{{ item.package_name }}"
+  #     state: "{{item.package_state}}"
+  #   loop:
+  #    "{{mar}}"
+  # - name: task3 with cond
+  #   tags: Install
+  #   apt:
+  #     name: nginx
+  #   when: ansible_facts['distribution'] == "Ubuntu"
+
+  # - name: task4 with cond
+  #   tags: sss
+  #   package:
+  #     name: httpd
+  #   when: ansible_facts['distribution'] == "CentOS"
+  # - name: task3 with cond
+  #   tags: Install
+  #   sysvinit:
+  #     name: nginx
+  #     state: restarted
+  #   when: ansible_facts['distribution'] == "Ubuntu"
+  #   - name: my handler
+  #     apt:
+  #       name: nginx
+  #     notify: hand
+  #     changed_when: true
+  #   - name: immediate
+  #     meta: flush_handlers
+  #   - name: Install task
+  #     apt:
+  #       name: curl 
+
+  # handlers:  
+  #   - name: hand
+  #     sysvinit:
+  #       name: nginx
+  #       state: restarted
+      
+  # - name: task3 with cond
+  #   tags: Install
+  #   command: ls /var/www/html/index.html
+  #   register: my_result
+
+  # - name: debug
+  #   debug: 
+  #     var: my_result
+      # when: 
+  #   when: my_result.changed == false
+  # - name: task4 with cond
+  #   tags: sss
+  #   sysvinit:
+  #     name: httpd
+  #     state: restarted 
+  #   when: ansible_facts['distribution'] == "CentOS"
+  # - name: Copy file to container 
+  #   copy:
+  #     src: /home/yahya/projects/ansible/index.html
+  #     dest: /var/www/html/index.html
+  #     owner: ansible
+  #     group: ansible
+  #     mode: '0644' 
+  
+  # - name: Restart Nginx
+  #   sysvinit:
+  #     name: nginx
+  #     state: restarted
+  # - name: task3
+  #   tags: always
+  #   apt:
+  #     name: nginx
